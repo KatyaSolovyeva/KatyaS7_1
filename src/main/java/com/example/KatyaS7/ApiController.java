@@ -26,7 +26,7 @@ public class ApiController {
         messages.add(message);
     }
 
-    @GetMapping("messages/(index)")
+    @GetMapping("messages/{index}")
     public String getMessage(@PathVariable ("index") Integer index){
         return messages.get(index);
     }
@@ -36,9 +36,9 @@ public class ApiController {
       //  messages.resolve((int)index);
    // }
 
-    @PutMapping("messages/(index)")
+    @PutMapping("messages/{index}")
     public void updateMessage(@PathVariable ("index") Integer index,@RequestBody String message){
        messages.remove((int)index);
     }
 }
-
+//curl -X POST http://localhost:8080/messages -H 'Content-Type: text/plain' -d 'hello'
